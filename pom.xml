@@ -12,14 +12,31 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.jdk.version>1.8</project.build.jdk.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>${project.build.jdk.version}</source>
+          <target>${project.build.jdk.version}</target>
+          <testSource>${project.build.jdk.version}</testSource>
+          <testTarget>${project.build.jdk.version}</testTarget>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
